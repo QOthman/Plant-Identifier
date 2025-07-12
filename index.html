@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Plant Identifier</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="header" id="header">
+      <h1>🌿 Plant Identifier</h1>
+      <p>Discover and care for your plants</p>
+      <div class="theme-toggle-wrapper">
+        <label class="switch">
+          <input type="checkbox" id="themeToggle">
+          <span class="slider">
+            <span class="icon sun">☀️</span>
+            <span class="icon moon">🌙</span>
+          </span>
+        </label>
+      </div>
+
+    </div>
+
+    <div class="main-card" id="mainCard">
+      <div class="upload-section" id="uploadSection">
+        <div class="upload-options">
+          <label for="imageInput" class="upload-btn">
+            <span class="icon">📱</span>
+            <span class="text">Choose Photo</span>
+            <input type="file" accept="image/*" id="imageInput">
+          </label>
+
+          <button onclick="startCamera()" id="cameraBtn" class="upload-btn">
+            <span class="icon">📷</span>
+            <span class="text">Take Photo</span>
+          </button>
+        </div>
+      </div>
+
+      <div id="cameraSection" class="camera-section hidden">
+        <video id="video" autoplay playsinline></video>
+        <canvas id="canvas" class="hidden"></canvas>
+        <div class="camera-controls">
+          <button onclick="capturePhoto()" id="captureBtn" class="btn btn-camera">
+            📸 Capture
+          </button>
+          <button onclick="stopCamera()" class="btn btn-cancel">
+            ❌ Cancel
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="result-section" id="result"></div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
